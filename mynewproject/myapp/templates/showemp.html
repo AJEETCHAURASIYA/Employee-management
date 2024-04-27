@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update Employee</title>
+    <style>
+        body {
+            /* text-align: center; */
+            /* align-items: center; */
+            /* justify-content: left; */
+            background-color: rgb(70, 70, 74);
+            /* color: white; */
+        }
+
+        form {
+            /* margin: 0px auto; */
+            color: white;
+            
+
+        }
+        table{
+            margin: 0px auto;
+            background-color: rgb(149, 171, 214);
+            border: 2px solid black;
+            padding: 40px;
+            border-radius: 10px;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: white; text-align: center;">Update employee Information</h1>
+    <form action="{% url 'updateemp' %}" method="POST">
+        {% csrf_token %}
+        <table >
+            <tr>
+                <td>Employee Id:-</td>
+                <td><input type="number" name="empid" placeholder="Id......" value="{{emp.empid}}" readonly></td>
+            </tr>
+            <tr>
+                <td>Employee Name:-</td>
+                <td><input type="text" name="empname" placeholder="name......" value="{{emp.empname}}"></td>
+            </tr>
+            <tr>
+                <td>Department:-</td>
+                <td><input type="text" name="department" placeholder="department......" value="{{emp.department}}"></td>
+            </tr>
+            <tr>
+                <td>Salary:-</td>
+                <td><input type="number" name="salary" placeholder="salary......" value="{{emp.salary}}"></td>
+            </tr>
+            <tr><td><br></td></tr>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Update" style="background-color: rgb(3 112 3); color: white;"></td>
+            </tr>
+        </table>
+    </form>
+
+</body>
+</html>
